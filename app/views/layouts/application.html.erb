@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twetter</title>
+  <title>Twitterful</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -14,7 +14,6 @@
       <a class="nav-logo-link" href="/">
         <span class="icon bird-topbar-blue"></span>
       </a>
-
       <%= button_to("Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-xs btn-link nav-sign-out') if user_signed_in? %>
     </div>
   </nav>
