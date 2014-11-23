@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :follows
-  has_many :twets
+  has_many :tweets
 
   validates :name, :presence => true
   validates :username, :presence => true, :uniqueness => true
@@ -15,10 +15,10 @@ class User < ActiveRecord::Base
     User.where(arel_table[:id].not_eq(user.id)).order(:name)
   end
 
-  # Leverages Twet.by_user_ids to return all twets created by this user
+  # Leverages Tweet.by_user_ids to return all tweets created by this user
   # and all users that this user follows.
   #
-  def all_twets
-    Twet.by_user_ids(id, *follows.map(&:following_id))
+  def all_tweets
+    Tweet.by_user_ids(id, *follows.map(&:following_id))
   end
 end

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Twetter::Application.load_tasks
+Tweetful::Application.load_tasks

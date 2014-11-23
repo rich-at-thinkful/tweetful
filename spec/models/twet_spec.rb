@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Twet do
+describe Tweet do
   context "associations" do
     it { should belong_to :user }
   end
 
   context "factories" do
-    describe "#twet" do
+    describe "#tweet" do
       subject { FactoryGirl.build(:twet) }
 
       it { should be_valid }
@@ -37,9 +37,9 @@ describe Twet do
   end
 
   describe ".by_user_ids" do
-    let!(:t1) { FactoryGirl.create(:twet) }
-    let!(:t2) { FactoryGirl.create(:twet)}
-    let!(:t3) { FactoryGirl.create(:twet) }
+    let!(:t1) { FactoryGirl.create(:tweet) }
+    let!(:t2) { FactoryGirl.create(:tweet)}
+    let!(:t3) { FactoryGirl.create(:tweet) }
 
     it "should search by user ids" do
       Twet.by_user_ids(t1.user.id, t3.user.id).load.map(&:user_id).should == [t3.user.id, t1.user.id]
