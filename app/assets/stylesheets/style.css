@@ -2,7 +2,6 @@ body {
   background-attachment: scroll;
   background-clip: border-box;
   background-color: rgba(0, 0, 0, 0);
-  background-image: -webkit-radial-gradient(center, circle cover, rgb(148, 210, 248), rgb(58, 146, 200));
   background-origin: padding-box;
   background-size: auto;
   color: rgb(51, 51, 51);
