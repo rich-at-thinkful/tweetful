@@ -12,6 +12,8 @@ Tweetful::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => 'home#index'
 
+  get '/about' => 'about#index'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
