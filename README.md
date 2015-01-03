@@ -35,7 +35,7 @@ bundle install
 echo "Tweetful::Application.config.secret_key_base = '`bundle exec rake secret`'" > config/initializers/secret_token.rb
 
 # Set up the database
-bundle exec rake db:create db:migrate db:test:prepare
+bundle exec rake db:create db:migrate
 
 # Start the server
 bundle exec rails s
