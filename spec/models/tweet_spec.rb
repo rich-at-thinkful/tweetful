@@ -7,7 +7,7 @@ describe Tweet do
 
   context "factories" do
     describe "#tweet" do
-      subject { FactoryGirl.build(:twet) }
+      subject { FactoryGirl.build(:tweet) }
 
       it { should be_valid }
     end
@@ -16,11 +16,11 @@ describe Tweet do
   context "validations" do
     it { should validate_presence_of :content }
     it "should not be valid when the length is between 2 and 140 characters" do
-      t1 = Twet.new(:content => '1')
-      t2 = Twet.new(:content => ':)')
-      t3 = Twet.new(:content => 'fdsjklsjfksdk fd kslfsdjkd')
-      t4 = Twet.new(:content => '*'*140)
-      t5 = Twet.new(:content => '#'*141)
+      t1 = Tweet.new(:content => '1')
+      t2 = Tweet.new(:content => ':)')
+      t3 = Tweet.new(:content => 'fdsjklsjfksdk fd kslfsdjkd')
+      t4 = Tweet.new(:content => '*'*140)
+      t5 = Tweet.new(:content => '#'*141)
 
       [t1, t5].each do |t|
         t.valid?
@@ -42,7 +42,7 @@ describe Tweet do
     let!(:t3) { FactoryGirl.create(:tweet) }
 
     it "should search by user ids" do
-      Twet.by_user_ids(t1.user.id, t3.user.id).load.map(&:user_id).should == [t3.user.id, t1.user.id]
+      Tweet.by_user_ids(t1.user.id, t3.user.id).load.map(&:user_id).should == [t3.user.id, t1.user.id]
     end
   end
 end
