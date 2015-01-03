@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   #
   # This action uses the #get_tweets method to set the @tweets instance variable.
   #
-  #   @tweets # => All twets defaultly shown to the authenticated user.
+  #   @tweets # => All tweets defaultly shown to the authenticated user.
   #
   def index
     get_tweets
@@ -14,14 +14,14 @@ class TweetsController < ApplicationController
 
   # POST /tweets
   #
-  # Used to create a new twet for the authenticated user based on the data passed
+  # Used to create a new tweet for the authenticated user based on the data passed
   # in params[:tweet]. If the tweet is created successfully, a success message is
   # set and we are directed to the index action. Otherwise, an error message is set,
-  # the twets visible to the authenticated user are loaded into @tweets and the index
+  # the tweets visible to the authenticated user are loaded into @tweets and the index
   # view template is displayed.
   #
-  #   @tweet # => The newly created (or attempted) twet.
-  #   @tweets # => (only set if the twet was not created) All twets defaultly shown
+  #   @tweet # => The newly created (or attempted) tweet.
+  #   @tweets # => (only set if the tweet was not created) All tweets defaultly shown
   #                to the authenticated user.
   #
   #
